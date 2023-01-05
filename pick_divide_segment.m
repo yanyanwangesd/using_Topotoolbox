@@ -9,7 +9,7 @@ function [divideIX, dividesxyz] = pick_divide_segment(DEM, D)
 % Please use the right version of MATLAB.
 
 % Input: 1) DEM: GRIDobj of DEM of which the DIVIDEobj is calculated from
-%        2) D: DIVIDEobj of the divide object
+%        2) D: DIVIDEobj of the divide object, preferably in type of strahler order
 %        3) Interactive user input of the two ends of an interest divide
 %        segment. 
 
@@ -18,7 +18,7 @@ function [divideIX, dividesxyz] = pick_divide_segment(DEM, D)
 
 % Output: 1)divideIX, the linear index of interest divide points that
 % refers back to the DIVIDEobj
-%         2)dividesxy, the x and y coordinates of divide points
+%         2)dividesxyz, the x, y, and z coordinates of divide points
 
 % Example: DEM = GRIDobj('example.tif');
 %          FD  = FLOWobj(DEM,'preprocess','c');
