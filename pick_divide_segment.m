@@ -124,10 +124,11 @@ for i = 1:length(strmBreaks)
 end
 
 % convert linear index into coordinates
-[dividesx, dividesy] = ind2coord(D, divideIX);
-dividesxy = [dividesx, dividesy];
+[dividesx, dividesy] = ind2coord(D, divideIX); % the x,y coordinates of points on the picked divide segment. 
+divideIND = coord2ind(DEM,dividesx, dividesy);
 
-
+%  elevation of points on the divide segment 
+dividesz = DEM.Z(divideIND); 
 
 
 
