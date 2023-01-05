@@ -1,4 +1,4 @@
-function [divideIX, dividesxy] = pick_divide_segment(DEM, D)
+function [divideIX, dividesxyz] = pick_divide_segment(DEM, D)
 
 % This function allows users to hand pick the two ends of an interest
 % divide segment by mouse-click on a figure which shows the DEM and the
@@ -24,7 +24,7 @@ function [divideIX, dividesxy] = pick_divide_segment(DEM, D)
 %          FD  = FLOWobj(DEM,'preprocess','c');
 %          ST = STREAMobj(FD,flowacc(FD)*DEM.cellsize^2>10e6);
 %          D = DIVIDEobj(FD,ST,'type','strahler');
-%          [divideIX, dividesxy] = pick_divide_segment(DEM, D)
+%          [divideIX, dividesxyz] = pick_divide_segment(DEM, D)
 %          figure
 %          plot(D)
 %          hold on
@@ -130,8 +130,9 @@ divideIND = coord2ind(DEM,dividesx, dividesy);
 %  elevation of points on the divide segment 
 dividesz = DEM.Z(divideIND); 
 
-
-
+% summarize x, y, z into one variable
+dividesxyz = [dividesx, dividesy,dividesz];
+%dividesxyz = [dividesx; dividesy; dividesz];
 
 
 
